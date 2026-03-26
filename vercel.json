@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "flappy-birdy",
+  "buildCommand": null,
+  "installCommand": "npm install",
+  "devCommand": "npm run dev",
+  "framework": null,
+  "regions": ["sfo1"],
+  "cleanUrls": true
+}
