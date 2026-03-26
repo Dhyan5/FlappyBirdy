@@ -1,14 +1,13 @@
 :root {
-    --bg-color: #0b0b0d;
-    --accent-red: #e63946;
-    --accent-red-glow: rgba(230, 57, 70, 0.4);
-    --gunmetal: #2b2d42;
-    --gunmetal-light: #8d99ae;
-    --text-white: #edf2f4;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --metallic-gradient: linear-gradient(135deg, #1a1a1a 0%, #333 50%, #1a1a1a 100%);
-    --red-metallic: linear-gradient(135deg, #b91d1d 0%, #ef4444 50%, #b91d1d 100%);
+    --bg-color: #0d0d0f;
+    --accent-red: #ff3b3b;
+    --accent-red-glow: rgba(255, 59, 59, 0.2);
+    --gunmetal: #23252f;
+    --gunmetal-light: #7a869a;
+    --text-white: #ffffff;
+    --panel-bg: #1a1b1e;
+    --panel-border: #33363d;
+    --score-bg: #131417;
 }
 
 * {
@@ -46,12 +45,11 @@ canvas {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 20px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 12px 24px;
+    background: var(--score-bg);
+    border: 2px solid var(--panel-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 #scoreLabel {
@@ -88,28 +86,25 @@ canvas {
 }
 
 .glass-panel {
-    background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
-    border-radius: 24px;
+    background: var(--panel-bg);
+    border: 2px solid var(--panel-border);
+    border-radius: 12px;
     padding: 40px;
     text-align: center;
     max-width: 400px;
     width: 90%;
-    box-shadow: 0 4px 60px rgba(0,0,0,0.5);
-    animation: fadeInScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    animation: fadeInScale 0.3s ease-out;
 }
 
 #overlayTitle {
-    font-size: 42px;
+    font-size: 48px;
     font-weight: 900;
-    margin: 0 0 10px 0;
-    background: var(--red-metallic);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin: 0 0 15px 0;
+    color: var(--accent-red);
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.5);
 }
 
 #overlaySubtitle {
@@ -121,9 +116,9 @@ canvas {
 
 hr {
     border: none;
-    height: 1px;
-    background: var(--glass-border);
-    margin: 20px 0;
+    height: 2px;
+    background: var(--panel-border);
+    margin: 25px 0;
 }
 
 #leaderboardSection h3 {
