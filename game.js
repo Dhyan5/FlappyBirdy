@@ -139,7 +139,7 @@ function refreshNameUI() {
     if (playerName) {
         nameInput.value = playerName;
         nameInput.classList.add('saved');
-        nameHint.textContent = `PILOT: ${playerName} — CHANGE NAME TO UPDATE`;
+        nameHint.textContent = `PLAYING AS: ${playerName} — CHANGE NAME TO UPDATE`;
         nameHint.classList.add('ready');
     } else {
         nameInput.value = '';
@@ -183,12 +183,23 @@ function endGame() {
         overlayTitle.innerText = "GAME OVER";
         overlaySubtitle.innerText = "CLICK TO RESTART";
         overlay.classList.remove('hidden');
+        // Make sure the panel is visible immediately, then refresh from server.
+        leaderboardSection.classList.remove('hidden');
+        renderLeaderboard();
         saveScore(score);
     }
 }
 
 async function saveScore(finalScore) {
-    if (!playerName || finalScore <= 0) return;
+    // Always show the leaderboard panel on game over, even for a 0-score run.
+    leaderboardSection.classList.remove('hidden');
+    renderLeaderboard();
+
+    if (!playerName || finalScore <= 0) {
+        // Still fetch the global list so the panel isn't empty.
+        await loadLeaderboard();
+        return;
+    }
     // Optimistic: keep overlay visible while we wait, then refresh the list.
     const ok = await submitScore(playerName, finalScore);
     if (ok) renderLeaderboard();
