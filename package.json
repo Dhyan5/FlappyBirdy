@@ -1,13 +1,14 @@
 {
   "name": "flappy-birdy",
   "version": "1.0.0",
-  "description": "A premium Flappy Bird clone with a leaderboard.",
+  "description": "A premium Flappy Bird clone with a global leaderboard.",
   "main": "index.html",
   "scripts": {
     "start": "serve .",
     "dev": "serve ."
   },
   "dependencies": {
+    "@neondatabase/serverless": "^0.9.3",
     "serve": "^14.2.1"
   }
 }

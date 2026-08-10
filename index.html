@@ -20,8 +20,24 @@
     <div id="overlay" class="overlay">
         <div id="menuContent" class="glass-panel">
             <h1 id="overlayTitle">FLAPPY BIRD</h1>
-    <p id="overlaySubtitle">PRESS SPACE OR TAP TO START</p>
-            
+            <p id="overlaySubtitle">PRESS SPACE OR TAP TO START</p>
+
+            <div id="nameEntrySection">
+                <hr>
+                <label for="playerNameInput" id="nameLabel">ENTER YOUR PILOT NAME</label>
+                <div id="nameInputRow">
+                    <input
+                        type="text"
+                        id="playerNameInput"
+                        maxlength="24"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="PILOT NAME">
+                    <button type="button" id="saveNameBtn">SAVE</button>
+                </div>
+                <p id="nameHint" class="name-hint">YOU MUST ENTER A NAME BEFORE PLAYING</p>
+            </div>
+
             <div id="leaderboardSection" class="hidden">
                 <hr>
                 <h3>TOP FLIGHTS</h3>
@@ -31,7 +47,7 @@
     </div>
 
     <canvas id="gameCanvas"></canvas>
-    
+
     <script src="game.js"></script>
 </body>
 </html>
